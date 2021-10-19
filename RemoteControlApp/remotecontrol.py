@@ -48,7 +48,7 @@ def update_outlet_state(buttonNumber):
 
     statestorage.set_state(buttonNumber, state)
     codesender.sendCode.queue(buttonNumber, state)
-    
+
     if request.is_json:
         return jsonify({"state" : statestorage.get_state(buttonNumber)}) 
     else:
@@ -56,4 +56,4 @@ def update_outlet_state(buttonNumber):
 
 if __name__ == "__main__":
     app.debug = True
-    app.run(host="0.0.0.0",port=5000)
+    app.run(host="0.0.0.0",port=443)
